@@ -2,8 +2,8 @@
 
 <!-- automd:badges color=yellow -->
 
-[![npm version](https://flat.badgen.net/npm/v/packageName?color=yellow)](https://npmjs.com/package/packageName)
-[![npm downloads](https://flat.badgen.net/npm/dm/packageName?color=yellow)](https://npmjs.com/package/packageName)
+[![npm version](https://img.shields.io/npm/v/@selfaware/greta?color=yellow)](https://npmjs.com/package/@selfaware/greta)
+[![npm downloads](https://img.shields.io/npm/dm/@selfaware/greta?color=yellow)](https://npmjs.com/package/@selfaware/greta)
 
 <!-- /automd -->
 
@@ -17,43 +17,19 @@ Install package:
 
 ```sh
 # ✨ Auto-detect
-npx nypm install packageName
+npx nypm install @selfaware/greta
 
 # npm
-npm install packageName
+npm install @selfaware/greta
 
 # yarn
-yarn add packageName
+yarn add @selfaware/greta
 
 # pnpm
-pnpm install packageName
+pnpm install @selfaware/greta
 
 # bun
-bun install packageName
-```
-
-<!-- /automd -->
-
-Import:
-
-<!-- automd:jsimport cjs cdn name="pkg" -->
-
-**ESM** (Node.js, Bun)
-
-```js
-import {} from "pkg";
-```
-
-**CommonJS** (Legacy Node.js)
-
-```js
-const {} = require("pkg");
-```
-
-**CDN** (Deno, Bun and Browsers)
-
-```js
-import {} from "https://esm.sh/pkg";
+bun install @selfaware/greta
 ```
 
 <!-- /automd -->
@@ -74,21 +50,4 @@ import {} from "https://esm.sh/pkg";
 
 ## License
 
-<!-- automd:contributors license=MIT -->
-
-Published under the [MIT](https://github.com/unjs/packageName/blob/main/LICENSE) license.
-Made by [community](https://github.com/unjs/packageName/graphs/contributors) 💛
-<br><br>
-<a href="https://github.com/unjs/packageName/graphs/contributors">
-<img src="https://contrib.rocks/image?repo=unjs/packageName" />
-</a>
-
-<!-- /automd -->
-
-<!-- automd:with-automd -->
-
----
-
-_🤖 auto updated with [automd](https://automd.unjs.io)_
-
-<!-- /automd -->
+Published under the [MIT](https://github.com/selfawarestudio/greta/blob/main/LICENSE) license.
