@@ -1,53 +1,75 @@
-# packageName
+# Nuxt 3 Minimal Starter
 
-<!-- automd:badges color=yellow -->
+Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
-[![npm version](https://img.shields.io/npm/v/@selfaware/greta?color=yellow)](https://npmjs.com/package/@selfaware/greta)
-[![npm downloads](https://img.shields.io/npm/dm/@selfaware/greta?color=yellow)](https://npmjs.com/package/@selfaware/greta)
+## Setup
 
-<!-- /automd -->
+Make sure to install the dependencies:
 
-This is my package description.
-
-## Usage
-
-Install package:
-
-<!-- automd:pm-install -->
-
-```sh
-# ✨ Auto-detect
-npx nypm install @selfaware/greta
-
+```bash
 # npm
-npm install @selfaware/greta
-
-# yarn
-yarn add @selfaware/greta
+npm install
 
 # pnpm
-pnpm install @selfaware/greta
+pnpm install
+
+# yarn
+yarn install
 
 # bun
-bun install @selfaware/greta
+bun install
 ```
 
-<!-- /automd -->
+## Development Server
 
-## Development
+Start the development server on `http://localhost:3000`:
 
-<details>
+```bash
+# npm
+npm run dev
 
-<summary>local development</summary>
+# pnpm
+pnpm run dev
 
-- Clone this repository
-- Install latest LTS version of [Node.js](https://nodejs.org/en/)
-- Enable [Corepack](https://github.com/nodejs/corepack) using `corepack enable`
-- Install dependencies using `pnpm install`
-- Run interactive tests using `pnpm dev`
+# yarn
+yarn dev
 
-</details>
+# bun
+bun run dev
+```
 
-## License
+## Production
 
-Published under the [MIT](https://github.com/selfawarestudio/greta/blob/main/LICENSE) license.
+Build the application for production:
+
+```bash
+# npm
+npm run build
+
+# pnpm
+pnpm run build
+
+# yarn
+yarn build
+
+# bun
+bun run build
+```
+
+Locally preview production build:
+
+```bash
+# npm
+npm run preview
+
+# pnpm
+pnpm run preview
+
+# yarn
+yarn preview
+
+# bun
+bun run preview
+```
+
+Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.

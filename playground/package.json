@@ -1,9 +1,0 @@
-{
-  "name": "greta-playground",
-  "private": true,
-  "version": "1.0.0",
-  "packageManager": "pnpm@9.0.4",
-  "scripts": {
-    "greta": "node ../dist/index.mjs"
-  }
-}

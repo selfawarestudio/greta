@@ -1,44 +1,27 @@
 {
-  "name": "@selfaware/greta",
-  "version": "0.0.0",
-  "description": "🐶 A project generation CLI for good dogs",
-  "repository": "selfawarestudio/greta",
-  "license": "MIT",
+  "name": "nuxt-app",
+  "private": true,
   "type": "module",
-  "exports": {
-    ".": "./dist/index.mjs"
-  },
-  "types": "./dist/index.d.ts",
-  "bin": {
-    "greta": "./dist/index.mjs"
-  },
-  "files": [
-    "dist"
-  ],
   "scripts": {
-    "build": "unbuild",
-    "dev:prepare": "unbuild --stub",
-    "lint": "prettier -c src",
-    "lint:fix": "automd && prettier -w src",
-    "prepack": "pnpm build",
-    "release": "pnpm test && changelogen --release && npm publish && git push --follow-tags",
-    "test": "pnpm lint && pnpm test:types",
-    "test:types": "tsc --noEmit --skipLibCheck"
+    "build": "nuxt build",
+    "dev": "nuxt dev --dotenv .env.local",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "citty": "^0.1.6",
-    "consola": "^3.2.3",
-    "giget": "^1.2.3",
-    "nypm": "^0.3.8",
-    "pathe": "^1.1.2"
-  },
-  "devDependencies": {
-    "@types/node": "^20.11.30",
-    "automd": "^0.3.6",
-    "changelogen": "^0.5.5",
+    "@nuxtjs/sanity": "^1.11.0",
+    "@nuxtjs/tailwindcss": "^6.12.0",
+    "@sanity/image-url": "^1.0.2",
+    "@vueuse/core": "^10.9.0",
+    "@vueuse/integrations": "^10.9.0",
+    "@vueuse/nuxt": "^10.9.0",
+    "groundspeed": "^1.0.2",
+    "gsap": "npm:@gsap/shockingly@^3.12.5",
+    "nuxt": "^3.11.2",
     "prettier": "^3.2.5",
-    "typescript": "^5.4.3",
-    "unbuild": "^2.0.0"
+    "vue": "^3.4.21",
+    "vue-router": "^4.3.0"
   },
-  "packageManager": "pnpm@9.0.4"
+  "packageManager": "pnpm@9.0.4+sha512.c374b52de3de88c58fd8333df664a737279cdb0e1344ba4054d3b1fffa9a1a3670854f755dca4f16adea3f14be9896a7fcaf167409fe0c1ad60475271dafe81a"
 }
