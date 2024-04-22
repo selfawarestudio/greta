@@ -1,14 +1,16 @@
 <script setup>
-// import * as queries from '~/utils/queries'
+import * as queries from '~/utils/queries'
 
-// const { data } = await useSanityData(queries.site)
+const { data } = await useSanityData(queries.site)
 </script>
 
 <template>
   <div>
-    <!-- <SiteHeader :header="data.header" /> -->
-    <NuxtPage />
-    <!-- <SiteFooter :footer="data.footer" /> -->
+    <SiteHeader :header="data.header" />
+    <div class="h-[400px]">
+      <NuxtPage />
+    </div>
+    <SiteFooter :footer="data.footer" />
   </div>
 </template>
 
@@ -38,7 +40,7 @@
 
   body {
     font-family: theme('fontFamily.sans');
-    font-size: 1.8rem;
+    font-size: 1.4rem;
   }
 }
 

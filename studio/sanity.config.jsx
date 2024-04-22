@@ -5,7 +5,6 @@ import { muxInput } from 'sanity-plugin-mux-input'
 import { colorInput } from '@sanity/color-input'
 import { media, mediaAssetSource } from 'sanity-plugin-media'
 import { noteField } from 'sanity-plugin-note-field'
-import { table } from '@sanity/table'
 import { schemaTypes } from './schemas'
 import { vercelWidget } from 'sanity-plugin-dashboard-widget-vercel'
 import {
@@ -58,7 +57,6 @@ export default defineConfig({
     colorInput(),
     media(),
     noteField(),
-    table(),
     dashboardTool({
       widgets: [vercelWidget(), projectUsersWidget(), projectInfoWidget()],
     }),

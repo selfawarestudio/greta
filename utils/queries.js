@@ -12,7 +12,10 @@ export const link = groq`{
     },
     ...(reference-> {
       _type == 'page' => {
-        'href': '/' + slug.current,
+        'href': select(
+          *[_type == 'site'][0].homepage->slug.current == slug.current => '/',
+          '/' + slug.current,
+        ),
       },
     }),
   },

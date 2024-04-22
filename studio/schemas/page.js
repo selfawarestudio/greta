@@ -15,7 +15,7 @@ export const page = defineType({
       title: 'Title',
       type: 'string',
       validation: Rule => Rule.required(),
-      group: 'content',
+      group: ['content', 'seo'],
     }),
     defineField({
       name: 'slug',
