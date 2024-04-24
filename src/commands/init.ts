@@ -7,7 +7,12 @@ import { defineCommand } from 'citty'
 import { execa } from 'execa'
 import { titleCase } from 'scule'
 import { writeFile, symlink } from 'node:fs/promises'
-import { createEnvContent, extractProjectId } from './utils'
+import {
+  extractSanityCliToken,
+  extractSanityProjectId,
+  createEnvContent,
+  createSanityCli,
+} from '../utils'
 
 const TEMPLATE_NAME = 'github:selfawarestudio/greta#template/nuxt-sanity'
 const PACKAGE_MANAGER = 'pnpm'
@@ -26,21 +31,36 @@ export default defineCommand({
     },
   },
   async run(ctx) {
-    consola.start('Checking Sanity CLI login status...')
-
-    try {
-      await execa('pnpm', ['dlx', '@sanity/cli', 'projects', 'list'], { stdout: 'pipe' })
-    } catch (err) {
-      consola.error('You must be logged into Sanity CLI. Please run `pnpm dlx @sanity/cli login` and then try again.')
-      process.exit(1)
-    }
-
-    // Now prepare to download our prpject template
     const cwd = resolve('.')
 
     let dir
+    let sanityCliToken
     let sanityProjectId
+    let sanityProjectToken
     let template: DownloadTemplateResult
+
+    consola.start('Checking Sanity CLI login status...')
+
+    try {
+      const { stdout } = await execa(
+        'pnpm',
+        ['dlx', '@sanity/cli', 'debug', '--secrets'],
+        { stdout: 'pipe' },
+      )
+
+      sanityCliToken = extractSanityCliToken(stdout)
+
+      if (!sanityCliToken) {
+        throw new Error(
+          'You must be logged into Sanity CLI. Please run `pnpm dlx @sanity/cli login` and then try again.',
+        )
+      }
+    } catch (err) {
+      consola.error((err as Error).toString())
+      process.exit(1)
+    }
+
+    // Now prepare to download our project template
 
     if (ctx.args.dir) {
       dir = ctx.args.dir
@@ -63,11 +83,14 @@ export default defineCommand({
     }
 
     // Next create a new Sanity project and set the project ID and other env vars
-    const sanityProjectTitle = await consola.prompt('Enter a title for the Sanity project', {
-      type: 'text',
-      placeholder: titleCase(dir),
-      default: titleCase(dir),
-    })
+    const sanityProjectTitle = await consola.prompt(
+      'Enter a title for the Sanity project',
+      {
+        type: 'text',
+        placeholder: titleCase(dir),
+        default: titleCase(dir),
+      },
+    )
 
     consola.start('Initializing a new Sanity project...')
     try {
@@ -87,13 +110,41 @@ export default defineCommand({
         { stdout: 'pipe' },
       )
 
-      sanityProjectId = extractProjectId(stdout)
+      sanityProjectId = extractSanityProjectId(stdout)
 
       if (!sanityProjectId) {
         throw new Error('Failed to extract project ID from Sanity CLI output')
       }
 
-      consola.success('Successfully created a new Sanity project. The Project ID is', sanityProjectId)
+      consola.success(
+        'Successfully created a new Sanity project. The Project ID is',
+        sanityProjectId,
+      )
+    } catch (err) {
+      consola.error((err as Error).toString())
+      process.exit(1)
+    }
+
+    // Now we can use the Sanity API to create a token for the project that will be used for website previews
+    consola.start('Setting up Sanity CORS and creating a preview token...')
+
+    const sanityCli = createSanityCli({
+      projectId: sanityProjectId,
+      token: sanityCliToken,
+    })
+
+    try {
+      await sanityCli('/cors', {
+        origin: 'http://localhost:3000',
+        allowCredentials: false,
+      })
+
+      const { key } = await sanityCli('/tokens', {
+        label: 'Website preview',
+        roleName: 'editor',
+      })
+
+      sanityProjectToken = key
     } catch (err) {
       consola.error((err as Error).toString())
       process.exit(1)
@@ -103,12 +154,16 @@ export default defineCommand({
     // Create a file called .env and write the project ID to it as SANITY_STUDIO_PROJECT_ID then write the file to template.dir
     const envFile = resolve(template.dir, '.env')
     const studioEnvFile = resolve(template.dir, 'studio', '.env')
-    const envContent = createEnvContent(sanityProjectTitle, sanityProjectId)
+    const envContent = createEnvContent(
+      sanityProjectTitle,
+      sanityProjectId,
+      sanityProjectToken,
+    )
 
     try {
       await writeFile(envFile, envContent)
       await symlink(envFile, studioEnvFile)
-      consola.success('.env file created and symbollically linked to studio folder.')
+      consola.success('.env file created and symlinked to studio folder.')
     } catch (err) {
       consola.error((err as Error).toString())
       process.exit(1)

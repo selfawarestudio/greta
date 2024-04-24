@@ -1,4 +1,4 @@
-export function extractProjectId(output: string): string | null {
+export function extractSanityProjectId(output: string): string | null {
   // This regular expression looks for the phrase "Project ID: " followed by any characters
   // that are not whitespace, capturing this sequence into a group.
   const regex = /Project ID:\s+(\S+)/

@@ -13,7 +13,7 @@ const main = defineCommand({
     description: gretaPkg.description,
   },
   subCommands: {
-    init: () => import('./init').then(_rDefault),
+    init: () => import('./commands/init').then(_rDefault),
   },
 })
 
