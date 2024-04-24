@@ -1,4 +1,4 @@
-# packageName
+# Greta
 
 <!-- automd:badges color=yellow -->
 
@@ -7,7 +7,7 @@
 
 <!-- /automd -->
 
-This is my package description.
+A project generation CLI for good dogs. Used internally to quickly scaffold new projects at [Self Aware](https://selfaware.studio). _Currently a work in progress!_
 
 ## Usage
 
