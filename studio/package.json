@@ -1,5 +1,5 @@
 {
-  "name": "hobbes",
+  "name": "studio",
   "private": true,
   "version": "1.0.0",
   "main": "package.json",
@@ -8,8 +8,7 @@
     "dev": "sanity dev",
     "start": "sanity start",
     "build": "sanity build",
-    "deploy": "sanity deploy",
-    "deploy-graphql": "sanity graphql deploy"
+    "deploy": "sanity deploy"
   },
   "keywords": [
     "sanity"
