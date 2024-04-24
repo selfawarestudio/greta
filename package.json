@@ -19,8 +19,6 @@
     "build": "unbuild",
     "clean": "rm -rf .nuxt dist node_modules",
     "dev:prepare": "unbuild --stub",
-    "preinstall": "pnpm clean",
-    "postinstall": "pnpm dev:prepare",
     "lint": "prettier -c src",
     "lint:fix": "automd && prettier -w src",
     "prepack": "pnpm build",
