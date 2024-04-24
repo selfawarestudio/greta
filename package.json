@@ -1,6 +1,6 @@
 {
   "name": "@selfaware/greta",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "🐶 A project generation CLI for good dogs",
   "repository": "selfawarestudio/greta",
   "license": "MIT",
@@ -21,7 +21,7 @@
     "lint": "prettier -c src",
     "lint:fix": "automd && prettier -w src",
     "prepack": "pnpm build",
-    "release": "pnpm test && changelogen --release && npm publish && git push --follow-tags",
+    "release": "pnpm test && changelogen --release && npm publish --access public && git push --follow-tags",
     "test": "pnpm lint && pnpm test:types",
     "test:types": "tsc --noEmit --skipLibCheck"
   },
