@@ -13,26 +13,9 @@ A project generation CLI for good dogs. Used internally to quickly scaffold new 
 
 Install package:
 
-<!-- automd:pm-install -->
-
 ```sh
-# ✨ Auto-detect
-npx nypm install @selfaware/greta
-
-# npm
-npm install @selfaware/greta
-
-# yarn
-yarn add @selfaware/greta
-
-# pnpm
-pnpm install @selfaware/greta
-
-# bun
-bun install @selfaware/greta
+pnpm i -g @selfaware/greta
 ```
-
-<!-- /automd -->
 
 ## Development
 
