@@ -31,31 +31,27 @@ export const link = groq`{
 export const image = groq`{
   _type,
   ...(asset-> {
-    _id,
-    url,
+    '_id': _id,
     'alt': altText,
-    'aspect': metadata.dimensions.width + ':' + metadata.dimensions.height,
+    'url': url,
+    'width': metadata.dimensions.width,
+    'height': metadata.dimensions.height,
   }),
 }`
 
 export const video = groq`{
   _type,
-  'aspect': width + ':' + height,
-  ...(asset-> { url }),
-}`
-
-export const muxVideo = groq`{
-  _type,
   ...(asset-> {
-    'url': 'https://stream.mux.com/' + playbackId + '/high.mp4',
-    'aspect': data.aspect_ratio,
+    'url': 'https://stream.mux.com/' + playbackId + '/capped-1080p.mp4',
+    'poster': 'https://image.mux.com/' + playbackId + '/thumbnail.jpg',
+    'width': data.static_renditions.files[0].width,
+    'height': data.static_renditions.files[0].height,
   }),
 }`
 
 export const media = groq`{
   _type == 'image' => ${image},
-  _type == 'mux.video' => ${muxVideo},
-  _type == 'video' => ${video}
+  _type == 'mux.video' => ${video},
 }`
 
 export const basicText = groq`{
@@ -91,14 +87,7 @@ export const pageProps = groq`{
   title,
   'slug': slug.current,
   'seo': ${seoMeta},
-  sections[] {
-    ...(${sections}),
-    _type == 'sectionReference' => {
-      ...(@-> {
-        sections[] ${sections},
-      }),
-    },
-  },
+  sections[] ${sections},
 }`
 
 export const homepage = groq`*[_type == 'site'][0].homepage-> ${pageProps}`

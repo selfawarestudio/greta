@@ -38,10 +38,6 @@ export default defineConfig({
               .icon(() => <File />)
               .child(S.documentTypeList('page').title('Pages')),
             S.listItem()
-              .title('Sections')
-              .icon(() => <Cube />)
-              .child(S.documentTypeList('section').title('Section')),
-            S.listItem()
               .title('Site')
               .icon(() => <Globe />)
               .child(
@@ -52,8 +48,8 @@ export default defineConfig({
               ),
           ]),
     }),
-    visionTool(),
-    muxInput({ mp4_support: 'standard' }),
+    process.env.NODE_ENV !== 'production' && visionTool(),
+    muxInput({ mp4_support: 'capped-1080p' }),
     colorInput(),
     media(),
     noteField(),
@@ -94,5 +90,13 @@ export default defineConfig({
         return prev
       }
     },
+  },
+
+  scheduledPublishing: {
+    enabled: false,
+  },
+
+  tasks: {
+    enabled: false,
   },
 })

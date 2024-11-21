@@ -4,7 +4,6 @@ import { page } from './page'
 import { link } from './link'
 import { basicText } from './basicText'
 import { section } from './section'
-import { sectionReference } from './sectionReference'
 import { richText } from './richText'
 import { site } from './site'
 import { pageSections } from './pageSections'
@@ -18,7 +17,6 @@ export const schemaTypes = [
   link,
   basicText,
   section,
-  sectionReference,
   richText,
   site,
   pageSections,

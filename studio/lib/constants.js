@@ -1,5 +1,6 @@
 import { defineField } from 'sanity'
 import { Link, ArrowSquareOut } from '@phosphor-icons/react'
+import sortBy from 'just-sort-by'
 
 export const IMAGE_FORMAT_ACCEPT_LIST = '.jpg,.jpeg,.png,.webp,.avif,.svg'
 
@@ -7,9 +8,12 @@ export const INTERNAL_LINK_REFERENCE_LIST = [
   { type: 'page' }, //
 ]
 
-export const PAGE_SECTION_TYPES = [
-  { type: 'exampleSection' }, //
-]
+export const PAGE_SECTION_TYPES = sortBy(
+  [
+    { type: 'exampleSection' }, //
+  ],
+  'type',
+)
 
 export const LINK_ANNOTATIONS = [
   defineField({
