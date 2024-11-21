@@ -11,7 +11,7 @@ const { header } = defineProps(['header'])
         v-for="(link, i) in header.primaryNavigation"
         :to="link.href"
         :target="link.target"
-        class="transition hover:text-gray-500"
+        class="hover:text-gray-500"
         :class="{ 'font-bold': i === 0 }"
         >{{ link.title }}</NuxtLink
       >

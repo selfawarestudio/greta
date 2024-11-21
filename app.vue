@@ -7,9 +7,7 @@ const { data } = await useSanityData(queries.site)
 <template>
   <div>
     <SiteHeader :header="data.header" />
-    <div class="h-[400px]">
-      <NuxtPage />
-    </div>
+    <NuxtPage :site="data" />
     <SiteFooter :footer="data.footer" />
   </div>
 </template>
@@ -66,8 +64,16 @@ const { data } = await useSanityData(queries.site)
     @apply px-15 m:px-25;
   }
 
-  .fill {
-    @apply w-full h-full inset-0;
+  .mt-main {
+    @apply mt-24 m:mt-48;
+
+    &:first-child {
+      @apply mt-24;
+    }
+  }
+
+  .mb-main {
+    @apply mb-24 m:mb-48;
   }
 
   .DEBUG {

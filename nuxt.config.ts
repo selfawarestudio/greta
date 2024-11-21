@@ -1,3 +1,5 @@
+import { SCREENS } from './utils/constants'
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   app: {
@@ -31,7 +33,12 @@ export default defineNuxtConfig({
     },
   },
   devtools: { enabled: false },
-  modules: ['@nuxtjs/tailwindcss', '@vueuse/nuxt', '@nuxtjs/sanity'],
+  modules: [
+    '@nuxtjs/tailwindcss',
+    '@vueuse/nuxt',
+    '@nuxtjs/sanity',
+    '@nuxt/image',
+  ],
   telemetry: false,
   tailwindcss: {
     viewer: false,
@@ -48,6 +55,9 @@ export default defineNuxtConfig({
         token: process.env.SANITY_STUDIO_PREVIEW_TOKEN,
       },
     },
+  },
+  image: {
+    screens: SCREENS,
   },
   routeRules: {
     '/**': { prerender: true },

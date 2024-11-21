@@ -30,7 +30,7 @@ const { footer } = defineProps(['footer'])
         v-for="link in footer.secondaryLinks"
         :to="link.href"
         :target="link.target"
-        class="transition hover:text-black"
+        class="transition hover:text-gray-400"
         >{{ link.title }}</NuxtLink
       >
     </div>
