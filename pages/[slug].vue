@@ -8,15 +8,15 @@ const { data } = await useSanityData(queries.page, {
 
 const { site } = defineProps(['site'])
 
-// useSeoMeta({
-//   title: data.value.title,
-//   titleTemplate: `%s | ${site.documentTitle}`,
-//   ogTitle: data.value.ogTitle ?? site.ogTitle,
-//   description: data.value.metaDescription ?? site.metaDescription,
-//   ogDescription: data.value.ogDescription ?? site.ogDescription,
-//   ogImage: data.value.ogImage?.url ?? site.ogImage?.url,
-//   twitterCard: 'summary_large_image',
-// })
+useSeoMeta({
+  title: data.value.seo.title,
+  titleTemplate: `%s | ${site.seo.title}`,
+  ogTitle: data.value.seo.ogTitle ?? site.seo.ogTitle,
+  description: data.value.seo.description ?? site.seo.description,
+  ogDescription: data.value.seo.ogDescription ?? site.seo.ogDescription,
+  ogImage: data.value.seo.ogImage?.url ?? site.seo.ogImage?.url,
+  twitterCard: 'summary_large_image',
+})
 </script>
 
 <template>
