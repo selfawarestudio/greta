@@ -76,7 +76,6 @@ export default defineCommand({
       template = await downloadTemplate(TEMPLATE_NAME, {
         dir,
         cwd,
-        forceClean: true,
       })
     } catch (err) {
       consola.error((err as Error).toString())
