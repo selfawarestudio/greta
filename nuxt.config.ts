@@ -32,12 +32,14 @@ export default defineNuxtConfig({
       // ],
     },
   },
-  devtools: { enabled: false },
+  devtools: { enabled: true },
   modules: [
     '@nuxtjs/tailwindcss',
     '@vueuse/nuxt',
     '@nuxtjs/sanity',
     '@nuxt/image',
+    '@nuxtjs/robots',
+    '@nuxtjs/sitemap',
   ],
   telemetry: false,
   tailwindcss: {
@@ -58,6 +60,16 @@ export default defineNuxtConfig({
   },
   image: {
     screens: SCREENS,
+  },
+  site: {
+    url: process.env.SITE_URL,
+  },
+  robots: {
+    // disallow: ['/something'],
+  },
+  sitemap: {
+    sources: ['/api/__sitemap__/urls'],
+    excludeAppSources: true,
   },
   routeRules: {
     '/**': { prerender: true },

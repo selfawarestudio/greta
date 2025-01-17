@@ -1,6 +1,8 @@
 <script setup>
 import * as queries from '~/utils/queries'
 
+useCanonicalTag()
+
 const { data } = await useSanityData(queries.site)
 </script>
 
