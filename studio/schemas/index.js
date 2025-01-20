@@ -9,6 +9,7 @@ import { site } from './site'
 import { pageSections } from './pageSections'
 import { media } from './media'
 import { exampleSection } from './exampleSection'
+import { redirect } from './redirect'
 
 export const schemaTypes = [
   externalLink,
@@ -22,4 +23,5 @@ export const schemaTypes = [
   pageSections,
   media,
   exampleSection,
+  redirect,
 ]

@@ -12,12 +12,14 @@ import {
   projectUsersWidget,
   projectInfoWidget,
 } from '@sanity/dashboard'
-import { Globe, Cube, File } from '@phosphor-icons/react'
+import { Globe, File, ArrowRight } from '@phosphor-icons/react'
 
 const singletonActions = new Set(['publish', 'discardChanges', 'restore'])
+
 const singletonTypes = new Set([
   // 'site'
 ])
+
 const previewableTypes = new Set(['page'])
 
 export default defineConfig({
@@ -46,6 +48,10 @@ export default defineConfig({
                   .documentId('site')
                   .title('Site'),
               ),
+            S.listItem()
+              .title('Redirects')
+              .icon(() => <ArrowRight />)
+              .child(S.documentTypeList('redirect').title('Redirects')),
           ]),
     }),
     process.env.NODE_ENV !== 'production' && visionTool(),
