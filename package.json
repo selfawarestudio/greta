@@ -10,7 +10,8 @@
     "deploy-sanity": "pnpm --filter studio deploy",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "link-env": "node ./scripts/link-env.js"
+    "env-pull": "vercel env pull .env && node ./scripts/link-env.js",
+    "vercel-link": "vercel link"
   },
   "dependencies": {
     "@nuxt/image": "^1.8.1",
@@ -32,7 +33,8 @@
   "devDependencies": {
     "concurrently": "^8.2.2",
     "consola": "^3.2.3",
-    "prettier": "^3.2.5"
+    "prettier": "^3.2.5",
+    "vercel": "^41.4.1"
   },
   "packageManager": "pnpm@9.0.4+sha512.c374b52de3de88c58fd8333df664a737279cdb0e1344ba4054d3b1fffa9a1a3670854f755dca4f16adea3f14be9896a7fcaf167409fe0c1ad60475271dafe81a"
 }
