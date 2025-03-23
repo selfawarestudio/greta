@@ -41,6 +41,12 @@ importers:
       '@vueuse/router':
         specifier: ^13.0.0
         version: 13.0.0(vue-router@4.5.0(vue@3.5.13(typescript@4.9.5)))(vue@3.5.13(typescript@4.9.5))
+      embla-carousel:
+        specifier: ^8.5.2
+        version: 8.5.2
+      embla-carousel-vue:
+        specifier: ^8.5.2
+        version: 8.5.2(vue@3.5.13(typescript@4.9.5))
       groundspeed:
         specifier: ^1.0.2
         version: 1.0.2
@@ -4152,6 +4158,19 @@ packages:
 
   electron-to-chromium@1.5.64:
     resolution: {integrity: sha512-IXEuxU+5ClW2IGEYFC2T7szbyVgehupCWQe5GNh+H065CD6U6IFN0s4KeAMFGNmQolRU4IV7zGBWSYMmZ8uuqQ==}
+
+  embla-carousel-reactive-utils@8.5.2:
+    resolution: {integrity: sha512-QC8/hYSK/pEmqEdU1IO5O+XNc/Ptmmq7uCB44vKplgLKhB/l0+yvYx0+Cv0sF6Ena8Srld5vUErZkT+yTahtDg==}
+    peerDependencies:
+      embla-carousel: 8.5.2
+
+  embla-carousel-vue@8.5.2:
+    resolution: {integrity: sha512-jPZKpst5auGJQ/GRs+UPc7KQGYd/zkwU+bA3m/SDCd4dsTpNScSmfBDWeB/SSUcc6G3z9GV+bOfyAJw1gZLUMA==}
+    peerDependencies:
+      vue: ^3.2.37
+
+  embla-carousel@8.5.2:
+    resolution: {integrity: sha512-xQ9oVLrun/eCG/7ru3R+I5bJ7shsD8fFwLEY7yPe27/+fDHCNj0OT5EoG5ZbFyOxOcG6yTwW8oTz/dWyFnyGpg==}
 
   emoji-regex@8.0.0:
     resolution: {integrity: sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A==}
@@ -8850,7 +8869,7 @@ snapshots:
       '@babel/traverse': 7.25.9
       '@babel/types': 7.26.5
       convert-source-map: 2.0.0
-      debug: 4.4.0(supports-color@9.4.0)
+      debug: 4.4.0(supports-color@8.1.1)
       gensync: 1.0.0-beta.2
       json5: 2.2.3
       semver: 6.3.1
@@ -8870,7 +8889,7 @@ snapshots:
       '@babel/traverse': 7.26.10
       '@babel/types': 7.26.10
       convert-source-map: 2.0.0
-      debug: 4.4.0(supports-color@9.4.0)
+      debug: 4.4.0(supports-color@8.1.1)
       gensync: 1.0.0-beta.2
       json5: 2.2.3
       semver: 6.3.1
@@ -8963,7 +8982,7 @@ snapshots:
       '@babel/core': 7.26.0
       '@babel/helper-compilation-targets': 7.25.9
       '@babel/helper-plugin-utils': 7.25.9
-      debug: 4.4.0(supports-color@9.4.0)
+      debug: 4.4.0(supports-color@8.1.1)
       lodash.debounce: 4.0.8
       resolve: 1.22.8
     transitivePeerDependencies:
@@ -9764,7 +9783,7 @@ snapshots:
       '@babel/parser': 7.26.2
       '@babel/template': 7.25.9
       '@babel/types': 7.26.5
-      debug: 4.4.0(supports-color@9.4.0)
+      debug: 4.4.0(supports-color@8.1.1)
       globals: 11.12.0
     transitivePeerDependencies:
       - supports-color
@@ -9776,7 +9795,7 @@ snapshots:
       '@babel/parser': 7.26.10
       '@babel/template': 7.26.9
       '@babel/types': 7.26.10
-      debug: 4.4.0(supports-color@9.4.0)
+      debug: 4.4.0(supports-color@8.1.1)
       globals: 11.12.0
     transitivePeerDependencies:
       - supports-color
@@ -10177,7 +10196,7 @@ snapshots:
   '@eslint/config-array@0.19.0':
     dependencies:
       '@eslint/object-schema': 2.1.4
-      debug: 4.4.0(supports-color@9.4.0)
+      debug: 4.4.0(supports-color@8.1.1)
       minimatch: 3.1.2
     transitivePeerDependencies:
       - supports-color
@@ -10187,7 +10206,7 @@ snapshots:
   '@eslint/eslintrc@3.2.0':
     dependencies:
       ajv: 6.12.6
-      debug: 4.4.0(supports-color@9.4.0)
+      debug: 4.4.0(supports-color@8.1.1)
       espree: 10.3.0
       globals: 14.0.0
       ignore: 5.3.1
@@ -10422,7 +10441,7 @@ snapshots:
 
   '@koa/router@12.0.1':
     dependencies:
-      debug: 4.4.0(supports-color@9.4.0)
+      debug: 4.4.0(supports-color@8.1.1)
       http-errors: 2.0.0
       koa-compose: 4.1.0
       methods: 1.1.2
@@ -10432,7 +10451,7 @@ snapshots:
 
   '@kwsites/file-exists@1.1.1':
     dependencies:
-      debug: 4.4.0(supports-color@9.4.0)
+      debug: 4.4.0(supports-color@8.1.1)
     transitivePeerDependencies:
       - supports-color
 
@@ -10458,7 +10477,7 @@ snapshots:
     dependencies:
       consola: 3.4.0
       detect-libc: 2.0.3
-      https-proxy-agent: 7.0.6(supports-color@9.4.0)
+      https-proxy-agent: 7.0.6
       node-fetch: 2.7.0(encoding@0.1.13)
       nopt: 8.1.0
       semver: 7.7.1
@@ -10856,7 +10875,7 @@ snapshots:
       '@portabletext/types': 2.0.13
       '@sanity/client': 6.28.3(debug@4.4.0)
       '@sanity/core-loader': 1.7.12(@sanity/client@6.28.3)
-      '@sanity/preview-url-secret': 2.1.6(@sanity/client@6.28.3)
+      '@sanity/preview-url-secret': 2.1.6(@sanity/client@6.28.3(debug@4.4.0))
       '@sanity/visual-editing': 2.8.0(@sanity/client@6.28.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       chalk: 5.4.1
       defu: 6.1.4
@@ -10952,7 +10971,7 @@ snapshots:
     dependencies:
       '@oclif/core': 4.2.10
       ansis: 3.17.0
-      debug: 4.4.0(supports-color@9.4.0)
+      debug: 4.4.0(supports-color@8.1.1)
       npm: 10.9.2
       npm-package-arg: 11.0.3
       npm-run-path: 5.3.0
@@ -11160,7 +11179,7 @@ snapshots:
       '@sanity/schema': 3.80.1(@types/react@18.3.12)(debug@4.4.0)
       '@sanity/types': 3.80.1(@types/react@18.3.12)(debug@4.4.0)
       '@xstate/react': 5.0.3(@types/react@18.3.12)(react@18.3.1)(xstate@5.19.2)
-      debug: 4.4.0(supports-color@9.4.0)
+      debug: 4.4.0(supports-color@8.1.1)
       get-random-values-esm: 1.0.2
       lodash: 4.17.21
       lodash.startcase: 4.4.0
@@ -11385,7 +11404,7 @@ snapshots:
       '@sanity/template-validator': 2.4.3
       '@sanity/util': 3.80.1(@types/react@18.3.12)(debug@4.4.0)
       chalk: 4.1.2
-      debug: 4.4.0(supports-color@9.4.0)
+      debug: 4.4.0(supports-color@8.1.1)
       decompress: 4.2.1
       esbuild: 0.21.5
       esbuild-register: 3.5.0(esbuild@0.21.5)
@@ -11418,7 +11437,7 @@ snapshots:
       '@babel/register': 7.23.7(@babel/core@7.26.0)
       '@babel/traverse': 7.25.9
       '@babel/types': 7.26.5
-      debug: 4.4.0(supports-color@9.4.0)
+      debug: 4.4.0(supports-color@8.1.1)
       globby: 11.1.0
       groq: 3.80.1
       groq-js: 1.16.1
@@ -11520,7 +11539,7 @@ snapshots:
       '@sanity/client': 6.28.3(debug@4.4.0)
       '@sanity/util': 3.68.3(@types/react@18.3.12)(debug@4.4.0)
       archiver: 7.0.1
-      debug: 4.4.0(supports-color@9.4.0)
+      debug: 4.4.0(supports-color@8.1.1)
       get-it: 8.6.7(debug@4.4.0)
       json-stream-stringify: 2.0.4
       lodash: 4.17.21
@@ -11552,7 +11571,7 @@ snapshots:
       '@sanity/generate-help-url': 3.0.0
       '@sanity/mutator': 3.80.1(@types/react@18.3.12)
       '@sanity/uuid': 3.0.2
-      debug: 4.4.0(supports-color@9.4.0)
+      debug: 4.4.0(supports-color@8.1.1)
       file-url: 2.0.2
       get-it: 8.6.7(debug@4.4.0)
       get-uri: 2.0.4
@@ -11604,7 +11623,7 @@ snapshots:
       '@sanity/types': 3.80.1(@types/react@18.3.12)(debug@4.4.0)
       '@sanity/util': 3.80.1(@types/react@18.3.12)(debug@4.4.0)
       arrify: 2.0.1
-      debug: 4.4.0(supports-color@9.4.0)
+      debug: 4.4.0(supports-color@8.1.1)
       fast-fifo: 1.3.2
       groq-js: 1.16.1
       p-map: 7.0.2
@@ -11643,7 +11662,7 @@ snapshots:
       '@sanity/diff-match-patch': 3.2.0
       '@sanity/types': 3.80.1(@types/react@18.3.12)(debug@4.4.0)
       '@sanity/uuid': 3.0.2
-      debug: 4.4.0(supports-color@9.4.0)
+      debug: 4.4.0(supports-color@8.1.1)
       lodash: 4.17.21
     transitivePeerDependencies:
       - '@types/react'
@@ -11662,7 +11681,7 @@ snapshots:
       '@sanity/client': 6.28.3(debug@4.4.0)
       '@sanity/uuid': 3.0.2
 
-  '@sanity/preview-url-secret@2.1.6(@sanity/client@6.28.3)':
+  '@sanity/preview-url-secret@2.1.6(@sanity/client@6.28.3(debug@4.4.0))':
     dependencies:
       '@sanity/client': 6.28.3(debug@4.4.0)
       '@sanity/uuid': 3.0.2
@@ -12082,7 +12101,7 @@ snapshots:
       '@typescript-eslint/types': 7.18.0
       '@typescript-eslint/typescript-estree': 7.18.0(typescript@5.6.3)
       '@typescript-eslint/visitor-keys': 7.18.0
-      debug: 4.4.0(supports-color@9.4.0)
+      debug: 4.4.0(supports-color@8.1.1)
       eslint: 9.15.0(jiti@2.4.2)
     optionalDependencies:
       typescript: 5.6.3
@@ -12098,7 +12117,7 @@ snapshots:
     dependencies:
       '@typescript-eslint/typescript-estree': 7.18.0(typescript@5.6.3)
       '@typescript-eslint/utils': 7.18.0(eslint@9.15.0(jiti@2.4.2))(typescript@5.6.3)
-      debug: 4.4.0(supports-color@9.4.0)
+      debug: 4.4.0(supports-color@8.1.1)
       eslint: 9.15.0(jiti@2.4.2)
       ts-api-utils: 1.3.0(typescript@5.6.3)
     optionalDependencies:
@@ -12112,7 +12131,7 @@ snapshots:
     dependencies:
       '@typescript-eslint/types': 7.18.0
       '@typescript-eslint/visitor-keys': 7.18.0
-      debug: 4.4.0(supports-color@9.4.0)
+      debug: 4.4.0(supports-color@8.1.1)
       globby: 11.1.0
       is-glob: 4.0.3
       minimatch: 9.0.5
@@ -13727,6 +13746,18 @@ snapshots:
 
   electron-to-chromium@1.5.64: {}
 
+  embla-carousel-reactive-utils@8.5.2(embla-carousel@8.5.2):
+    dependencies:
+      embla-carousel: 8.5.2
+
+  embla-carousel-vue@8.5.2(vue@3.5.13(typescript@4.9.5)):
+    dependencies:
+      embla-carousel: 8.5.2
+      embla-carousel-reactive-utils: 8.5.2(embla-carousel@8.5.2)
+      vue: 3.5.13(typescript@4.9.5)
+
+  embla-carousel@8.5.2: {}
+
   emoji-regex@8.0.0: {}
 
   emoji-regex@9.2.2: {}
@@ -13908,7 +13939,7 @@ snapshots:
 
   esbuild-register@3.5.0(esbuild@0.21.5):
     dependencies:
-      debug: 4.4.0(supports-color@9.4.0)
+      debug: 4.4.0(supports-color@8.1.1)
       esbuild: 0.21.5
     transitivePeerDependencies:
       - supports-color
@@ -14091,7 +14122,7 @@ snapshots:
       ajv: 6.12.6
       chalk: 4.1.2
       cross-spawn: 7.0.6
-      debug: 4.4.0(supports-color@9.4.0)
+      debug: 4.4.0(supports-color@8.1.1)
       escape-string-regexp: 4.0.0
       eslint-scope: 8.2.0
       eslint-visitor-keys: 4.2.0
@@ -14326,7 +14357,7 @@ snapshots:
 
   follow-redirects@1.15.9(debug@4.4.0):
     optionalDependencies:
-      debug: 4.4.0(supports-color@9.4.0)
+      debug: 4.4.0(supports-color@8.1.1)
 
   for-each@0.3.3:
     dependencies:
@@ -14618,7 +14649,7 @@ snapshots:
 
   groq-js@1.16.1:
     dependencies:
-      debug: 4.4.0(supports-color@9.4.0)
+      debug: 4.4.0(supports-color@8.1.1)
     transitivePeerDependencies:
       - supports-color
 
@@ -14784,11 +14815,18 @@ snapshots:
   http-proxy-agent@7.0.2:
     dependencies:
       agent-base: 7.1.3
-      debug: 4.4.0(supports-color@9.4.0)
+      debug: 4.4.0(supports-color@8.1.1)
     transitivePeerDependencies:
       - supports-color
 
   http-shutdown@1.2.2: {}
+
+  https-proxy-agent@7.0.6:
+    dependencies:
+      agent-base: 7.1.3
+      debug: 4.4.0(supports-color@8.1.1)
+    transitivePeerDependencies:
+      - supports-color
 
   https-proxy-agent@7.0.6(supports-color@9.4.0):
     dependencies:
@@ -14888,7 +14926,7 @@ snapshots:
     dependencies:
       '@ioredis/commands': 1.2.0
       cluster-key-slot: 1.1.2
-      debug: 4.4.0(supports-color@9.4.0)
+      debug: 4.4.0(supports-color@8.1.1)
       denque: 2.1.0
       lodash.defaults: 4.2.0
       lodash.isarguments: 3.1.0
@@ -15213,7 +15251,7 @@ snapshots:
       form-data: 4.0.2
       html-encoding-sniffer: 4.0.0
       http-proxy-agent: 7.0.2
-      https-proxy-agent: 7.0.6(supports-color@9.4.0)
+      https-proxy-agent: 7.0.6
       is-potential-custom-element-name: 1.0.1
       parse5: 7.2.1
       rrweb-cssom: 0.6.0
@@ -15240,7 +15278,7 @@ snapshots:
       form-data: 4.0.2
       html-encoding-sniffer: 4.0.0
       http-proxy-agent: 7.0.2
-      https-proxy-agent: 7.0.6(supports-color@9.4.0)
+      https-proxy-agent: 7.0.6
       is-potential-custom-element-name: 1.0.1
       nwsapi: 2.2.19
       parse5: 7.2.1
@@ -15343,7 +15381,7 @@ snapshots:
 
   koa-send@5.0.1:
     dependencies:
-      debug: 4.4.0(supports-color@9.4.0)
+      debug: 4.4.0(supports-color@8.1.1)
       http-errors: 1.8.1
       resolve-path: 1.4.0
     transitivePeerDependencies:
@@ -15363,7 +15401,7 @@ snapshots:
       content-disposition: 0.5.4
       content-type: 1.0.5
       cookies: 0.9.1
-      debug: 4.4.0(supports-color@9.4.0)
+      debug: 4.4.0(supports-color@8.1.1)
       delegates: 1.0.0
       depd: 2.0.0
       destroy: 1.2.0
@@ -17391,7 +17429,7 @@ snapshots:
       '@sanity/migrate': 3.80.1(@types/react@18.3.12)
       '@sanity/mutator': 3.80.1(@types/react@18.3.12)
       '@sanity/presentation-comlink': 1.0.12(@sanity/client@6.28.3(debug@4.4.0))(@sanity/types@3.80.1(@types/react@18.3.12)(debug@4.4.0))
-      '@sanity/preview-url-secret': 2.1.6(@sanity/client@6.28.3)
+      '@sanity/preview-url-secret': 2.1.6(@sanity/client@6.28.3(debug@4.4.0))
       '@sanity/schema': 3.80.1(@types/react@18.3.12)(debug@4.4.0)
       '@sanity/telemetry': 0.7.7
       '@sanity/types': 3.80.1(@types/react@18.3.12)(debug@4.4.0)
@@ -17418,7 +17456,7 @@ snapshots:
       console-table-printer: 2.12.0
       dataloader: 2.2.2
       date-fns: 2.30.0
-      debug: 4.4.0(supports-color@9.4.0)
+      debug: 4.4.0(supports-color@8.1.1)
       esbuild: 0.21.5
       esbuild-register: 3.5.0(esbuild@0.21.5)
       execa: 2.1.0
@@ -17655,7 +17693,7 @@ snapshots:
     dependencies:
       '@kwsites/file-exists': 1.1.1
       '@kwsites/promise-deferred': 1.1.1
-      debug: 4.4.0(supports-color@9.4.0)
+      debug: 4.4.0(supports-color@8.1.1)
     transitivePeerDependencies:
       - supports-color
 
@@ -18668,7 +18706,7 @@ snapshots:
   vite-node@3.0.9(@types/node@16.18.11)(jiti@2.4.2)(terser@5.30.4)(yaml@2.7.0):
     dependencies:
       cac: 6.7.14
-      debug: 4.4.0(supports-color@9.4.0)
+      debug: 4.4.0(supports-color@8.1.1)
       es-module-lexer: 1.6.0
       pathe: 2.0.3
       vite: 6.2.2(@types/node@16.18.11)(jiti@2.4.2)(terser@5.30.4)(yaml@2.7.0)
@@ -18707,7 +18745,7 @@ snapshots:
   vite-plugin-inspect@11.0.0(@nuxt/kit@3.16.1(magicast@0.3.5))(vite@6.2.2(@types/node@16.18.11)(jiti@2.4.2)(terser@5.30.4)(yaml@2.7.0)):
     dependencies:
       ansis: 3.17.0
-      debug: 4.4.0(supports-color@9.4.0)
+      debug: 4.4.0(supports-color@8.1.1)
       error-stack-parser-es: 1.0.5
       ohash: 2.0.11
       open: 10.1.0
