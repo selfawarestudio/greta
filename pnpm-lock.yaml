@@ -35,6 +35,9 @@ importers:
       '@vueuse/nuxt':
         specifier: ^11.3.0
         version: 11.3.0(magicast@0.3.5)(nuxt@3.14.1592(@parcel/watcher@2.4.1)(@types/node@16.18.11)(encoding@0.1.13)(eslint@9.15.0(jiti@2.4.2))(ioredis@5.4.1)(magicast@0.3.5)(meow@9.0.0)(optionator@0.9.3)(rollup@4.27.3)(terser@5.30.4)(typescript@4.9.5)(vite@5.4.11(@types/node@16.18.11)(terser@5.30.4)))(rollup@4.27.3)(vue@3.5.13(typescript@4.9.5))
+      '@vueuse/router':
+        specifier: ^13.0.0
+        version: 13.0.0(vue-router@4.4.5(vue@3.5.13(typescript@4.9.5)))(vue@3.5.13(typescript@4.9.5))
       groundspeed:
         specifier: ^1.0.2
         version: 1.0.2
@@ -2927,8 +2930,19 @@ packages:
     peerDependencies:
       nuxt: ^3.0.0
 
+  '@vueuse/router@13.0.0':
+    resolution: {integrity: sha512-O5H4qdovhkNa4LoNTLNMLaf1JXEfDL88jv7FM/QOB1uksbD2PiV9sGFKksS73hrAkxkV8wYUW3NAW4B75Fb47g==}
+    peerDependencies:
+      vue: ^3.5.0
+      vue-router: ^4.0.0
+
   '@vueuse/shared@11.3.0':
     resolution: {integrity: sha512-P8gSSWQeucH5821ek2mn/ciCk+MS/zoRKqdQIM3bHq6p7GXDAJLmnRRKmF5F65sAVJIfzQlwR3aDzwCn10s8hA==}
+
+  '@vueuse/shared@13.0.0':
+    resolution: {integrity: sha512-9MiHhAPw+sqCF/RLo8V6HsjRqEdNEWVpDLm2WBRW2G/kSQjb8X901sozXpSCaeLG0f7TEfMrT4XNaA5m1ez7Dg==}
+    peerDependencies:
+      vue: ^3.5.0
 
   '@xstate/react@3.2.2':
     resolution: {integrity: sha512-feghXWLedyq8JeL13yda3XnHPZKwYDN5HPBLykpLeuNpr9178tQd2/3d0NrH6gSd0sG5mLuLeuD+ck830fgzLQ==}
@@ -12241,12 +12255,22 @@ snapshots:
       - supports-color
       - vue
 
+  '@vueuse/router@13.0.0(vue-router@4.4.5(vue@3.5.13(typescript@4.9.5)))(vue@3.5.13(typescript@4.9.5))':
+    dependencies:
+      '@vueuse/shared': 13.0.0(vue@3.5.13(typescript@4.9.5))
+      vue: 3.5.13(typescript@4.9.5)
+      vue-router: 4.4.5(vue@3.5.13(typescript@4.9.5))
+
   '@vueuse/shared@11.3.0(vue@3.5.13(typescript@4.9.5))':
     dependencies:
       vue-demi: 0.14.10(vue@3.5.13(typescript@4.9.5))
     transitivePeerDependencies:
       - '@vue/composition-api'
       - vue
+
+  '@vueuse/shared@13.0.0(vue@3.5.13(typescript@4.9.5))':
+    dependencies:
+      vue: 3.5.13(typescript@4.9.5)
 
   '@xstate/react@3.2.2(@types/react@18.3.12)(react@18.3.1)(xstate@4.38.3)':
     dependencies:
