@@ -6,7 +6,7 @@
     "build": "nuxt build",
     "dev-nuxt": "nuxt dev --host",
     "dev-sanity": "pnpm --filter studio dev",
-    "dev": "pnpm link-env && concurrently -n Nuxt,Sanity -c '#00dc82','#f36458' 'pnpm dev-nuxt' 'pnpm dev-sanity'",
+    "dev": "concurrently -n Nuxt,Sanity -c '#00dc82','#f36458' 'pnpm dev-nuxt' 'pnpm dev-sanity'",
     "deploy-sanity": "pnpm --filter studio run deploy",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
