@@ -1,5 +1,6 @@
 import { defineArrayMember, defineField } from 'sanity'
-import { LINK_ANNOTATIONS } from '../lib/constants'
+import { defineInternalLink } from './internalLink'
+import { defineExternalLink } from './externalLink'
 
 export const richText = defineField({
   name: 'richText',
@@ -22,7 +23,10 @@ export const richText = defineField({
           { title: 'Italic', value: 'em' },
           { title: 'Bold', value: 'strong' },
         ],
-        annotations: LINK_ANNOTATIONS,
+        annotations: [
+          defineInternalLink({ withTitle: false }),
+          defineExternalLink({ withTitle: false }),
+        ],
       },
     }),
     defineArrayMember({ type: 'image' }),

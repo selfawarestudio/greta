@@ -1,5 +1,6 @@
 import { defineType, defineArrayMember } from 'sanity'
-import { IMAGE_FORMAT_ACCEPT_LIST } from '../lib/constants'
+
+const IMAGE_FORMAT_ACCEPT_LIST = '.jpg,.jpeg,.png,.webp,.avif,.svg'
 
 export const media = defineType({
   type: 'array',
@@ -13,6 +14,6 @@ export const media = defineType({
         accept: IMAGE_FORMAT_ACCEPT_LIST,
       },
     }),
-    defineArrayMember({ title: 'Mux Video', type: 'mux.video' }),
+    defineArrayMember({ title: 'Video', type: 'mux.video' }),
   ],
 })

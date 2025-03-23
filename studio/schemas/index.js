@@ -2,8 +2,7 @@ import { externalLink } from './externalLink'
 import { internalLink } from './internalLink'
 import { page } from './page'
 import { link } from './link'
-import { basicText } from './basicText'
-import { section } from './section'
+import { linkableText } from './linkableText'
 import { richText } from './richText'
 import { site } from './site'
 import { pageSections } from './pageSections'
@@ -16,8 +15,7 @@ export const schemaTypes = [
   internalLink,
   page,
   link,
-  basicText,
-  section,
+  linkableText,
   richText,
   site,
   pageSections,

@@ -74,4 +74,9 @@ export default defineNuxtConfig({
   routeRules: {
     '/**': { prerender: true },
   },
+  vue: {
+    compilerOptions: {
+      isCustomElement: tag => tag.startsWith('mux-'),
+    },
+  },
 })

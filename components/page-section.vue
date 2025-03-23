@@ -18,7 +18,7 @@ const SectionComponent = COMPONENT_MAP[section._type]
     :section="section"
     :sectionIndex="sectionIndex"
   />
-  <PageSectionPlaceholder v-else>
+  <Placeholder v-else>
     {{ titleCase(section._type) }}
-  </PageSectionPlaceholder>
+  </Placeholder>
 </template>

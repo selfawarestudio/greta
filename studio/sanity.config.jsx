@@ -55,7 +55,7 @@ export default defineConfig({
           ]),
     }),
     process.env.NODE_ENV !== 'production' && visionTool(),
-    muxInput({ mp4_support: 'capped-1080p' }),
+    muxInput(),
     colorInput(),
     media(),
     noteField(),

@@ -31,19 +31,19 @@ export const link = groq`{
 export const image = groq`{
   _type,
   ...(asset-> {
-    '_id': _id,
+    _id,
+    url,
     'alt': altText,
-    'url': url,
     'width': metadata.dimensions.width,
     'height': metadata.dimensions.height,
+    'lqip': metadata.lqip,
   }),
 }`
 
 export const video = groq`{
   _type,
   ...(asset-> {
-    'url': 'https://stream.mux.com/' + playbackId + '/capped-1080p.mp4',
-    'poster': 'https://image.mux.com/' + playbackId + '/thumbnail.jpg',
+    playbackId,
     'width': data.static_renditions.files[0].width,
     'height': data.static_renditions.files[0].height,
   }),
@@ -54,7 +54,7 @@ export const media = groq`{
   _type == 'mux.video' => ${video},
 }`
 
-export const basicText = groq`{
+export const linkableText = groq`{
   ...,
   markDefs[] ${link},
 }`
@@ -79,7 +79,7 @@ export const sections = groq`{
     headline,
     copy,
     button[0] ${link},
-    media ${media},
+    media[0] ${media},
   },
 }`
 
