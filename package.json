@@ -10,7 +10,8 @@
     "deploy-sanity": "pnpm --filter studio run deploy",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "env-pull": "vercel env pull .env && node ./scripts/link-env.js",
+    "env-pull": "vercel env pull .env && pnpm env-link",
+    "env-link": "node ./scripts/env-link.js",
     "vercel-link": "vercel link"
   },
   "dependencies": {
