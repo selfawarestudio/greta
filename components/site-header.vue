@@ -4,7 +4,7 @@ const { header } = defineProps(['header'])
 
 <template>
   <header
-    class="sticky top-0 bg-white border-b-1 border-gray-500 flex items-center justify-between h-56 px-main z-9"
+    class="fixed w-full top-0 bg-white border-b-1 border-gray-500 flex items-center justify-between h-56 px-main z-9"
   >
     <nav class="flex items-center gap-x-15 m:gap-x-20">
       <NuxtLink

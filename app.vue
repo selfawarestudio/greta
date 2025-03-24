@@ -10,7 +10,6 @@ const { data } = await useSanityData(queries.site)
   <div>
     <SiteHeader :header="data.header" />
     <NuxtPage :site="data" />
-    <SiteFooter :footer="data.footer" />
   </div>
 </template>
 

@@ -14,8 +14,14 @@ useSeoMeta({
   ogImage: data.value.seo.ogImage?.url ?? site.seo.ogImage?.url,
   twitterCard: 'summary_large_image',
 })
+
+definePageMeta({
+  middleware: 'transition',
+})
 </script>
 
 <template>
-  <PageSectionList :sections="data.sections" />
+  <Page :site="site">
+    <PageSectionList :sections="data.sections" />
+  </Page>
 </template>

@@ -1,4 +1,4 @@
-export const useCanonicalTag = () => {
+export function useCanonicalTag() {
   const route = useRoute()
   const baseUrl =
     process.env.NODE_ENV === 'production'
