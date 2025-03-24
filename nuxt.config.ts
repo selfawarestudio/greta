@@ -1,3 +1,4 @@
+import tailwindcss from '@tailwindcss/vite'
 import { SCREENS } from './lib/config'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
@@ -8,8 +9,8 @@ export default defineNuxtConfig({
     },
   },
   devtools: { enabled: false },
+  css: ['~/assets/main.css'],
   modules: [
-    '@nuxtjs/tailwindcss',
     '@vueuse/nuxt',
     '@nuxtjs/sanity',
     '@nuxt/image',
@@ -22,9 +23,6 @@ export default defineNuxtConfig({
     id: process.env.GTAG_ID,
   },
   telemetry: false,
-  tailwindcss: {
-    viewer: false,
-  },
   sanity: {
     projectId: process.env.SANITY_STUDIO_PROJECT_ID,
     dataset: process.env.SANITY_STUDIO_DATASET,
@@ -61,5 +59,8 @@ export default defineNuxtConfig({
   },
   imports: {
     dirs: ['lib'],
+  },
+  vite: {
+    plugins: [tailwindcss()],
   },
 })

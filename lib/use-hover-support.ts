@@ -1,2 +1,1 @@
-export const useHoverSupport = () =>
-  useMediaQuery('(hover: hover) and (pointer: fine)')
+export const useHoverSupport = () => useMediaQuery('(hover: hover)')
