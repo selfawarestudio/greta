@@ -1,4 +1,4 @@
-import { SCREENS } from './utils/constants'
+import { SCREENS } from './lib/config'
 
 export default {
   presets: [require('groundspeed')],
@@ -14,6 +14,12 @@ export default {
         black: '#000000',
         white: '#ffffff',
         red: '#ff0000',
+      },
+      transitionTimingFunction: {
+        DEFAULT: 'cubic-bezier(0.165, 0.84, 0.44, 1)',
+      },
+      transitionDuration: {
+        DEFAULT: '0.5s',
       },
     },
   },

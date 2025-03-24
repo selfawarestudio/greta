@@ -7,3 +7,8 @@ export const SCREENS = {
   xl: 1440,
   '2xl': 1536,
 }
+
+export const GSAP_DEFAULTS = {
+  duration: 0.5,
+  ease: 'quart',
+}

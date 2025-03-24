@@ -1,5 +1,5 @@
 <script setup>
-import * as queries from '~/utils/queries'
+import * as queries from '~/lib/queries'
 
 const { params } = useRoute()
 const { data } = await useSanityData(queries.page, {

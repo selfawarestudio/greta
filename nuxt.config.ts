@@ -1,4 +1,4 @@
-import { SCREENS } from './utils/constants'
+import { SCREENS } from './lib/config'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -15,7 +15,12 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxtjs/robots',
     '@nuxtjs/sitemap',
+    'nuxt-gtag',
   ],
+  gtag: {
+    enabled: process.env.NODE_ENV === 'production',
+    id: process.env.GTAG_ID,
+  },
   telemetry: false,
   tailwindcss: {
     viewer: false,
@@ -53,5 +58,8 @@ export default defineNuxtConfig({
     compilerOptions: {
       isCustomElement: tag => tag.startsWith('mux-'),
     },
+  },
+  imports: {
+    dirs: ['lib'],
   },
 })
